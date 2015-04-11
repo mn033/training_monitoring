@@ -5,7 +5,7 @@ The .xls-file has to be in a certain form (see ...link...).
 
 Charts and graphs are built by the help of matplotlib. The visualization of the training data should help 
 keeping track of the invested effort, seeing correlations and analyzing for improvements.
-![Sample plot](res/sample_fig.svg?raw=true)
+![Sample plot](res/sample_fig.png)
 ## To-Do
 - [ ] support of Google Spreadsheets
 - [ ] improvement of PDF rendering
