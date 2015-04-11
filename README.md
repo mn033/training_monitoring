@@ -5,8 +5,7 @@ The .xls-file has to be in a certain form (see ...link...).
 
 Charts and graphs are built by the help of matplotlib. The visualization of the training data should help 
 keeping track of the invested effort, seeing correlations and analyzing for improvements.
-![Alt text](https://raw.githubusercontent.com/jgru/training_monitoring/master/res/sample_fig.svg?raw=true)
-<img src="https://raw.githubusercontent.com/jgru/training_monitoring/master/res/sample_fig.svg?raw=true">
+![]<img src="res/sample_fig.svg?raw=true">
 ## To-Do
 - [ ] support of Google Spreadsheets
 - [ ] improvement of PDF rendering
