@@ -16,14 +16,14 @@ import click
 @click.option('--output', default='', help='Path to .pdf-file.')
 
 def create_training_stats(input,  sheet, output):
-    isSVGOnly = False
+    isSVGOnly = True
 
     parser = TrainingDataParser.XlsParser(input)
     parser.read_training_data()
     visualizer = TrainingVisualizer.Plotter(parser.data)
 
     if isSVGOnly:
-        visualizer.create_combined_plot().savefig('out.svg')
+        visualizer.create_combined_plot().savefig('sample_fig.svg')
         return
 
     dw = TrainingDocumentWriter.TrainingDocumentWriter(parser.read_cell_value(0,0,0))
