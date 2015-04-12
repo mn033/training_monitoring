@@ -1,10 +1,10 @@
 __author__ = 'gru'
 
-import TrainingDataParser
+import parsers
 from matplotlib import pyplot as plt
 import numpy as np
 from collections import Counter
-import TrainingDataConstants as Constants
+import training_constants as Constants
 from matplotlib.patches import Rectangle
 
 

@@ -6,7 +6,7 @@ import numpy as np # numerical library
 from datetime import datetime, timedelta, date
 
 
-import TrainingDataConstants as Constants
+import training_constants as Constants
 import abc
 
 class TrainingDataParser:

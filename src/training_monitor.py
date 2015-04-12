@@ -1,11 +1,11 @@
 __author__ = 'gru'
 
-import TrainingDataParser
+import parsers
 from matplotlib import pyplot as plt
 import numpy as np
-import TrainingDataConstants as Constants
-import TrainingDocumentWriter
-import TrainingVisualizer
+import training_constants as Constants
+import docwriter
+import plotter
 
 import click
 
@@ -18,15 +18,15 @@ import click
 def create_training_stats(input,  sheet, output):
     isSVGOnly = False
 
-    parser = TrainingDataParser.XlsParser(input)
+    parser = parsers.XlsParser(input)
     parser.read_training_data()
-    visualizer = TrainingVisualizer.Plotter(parser.data)
+    visualizer = plotter.Plotter(parser.data)
 
     if isSVGOnly:
         visualizer.create_combined_plot().savefig('sample_fig.png')
         return
 
-    dw = TrainingDocumentWriter.TrainingDocumentWriter(parser.read_cell_value(0,0,0))
+    dw = docwriter.TrainingDocumentWriter(parser.read_cell_value(0,0,0))
     dw.append_section(parser.get_sheet_names()[0],'')
     for f in visualizer.get_full_stat():
         dw.append_plot(f)
