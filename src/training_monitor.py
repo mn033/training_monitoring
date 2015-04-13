@@ -8,7 +8,7 @@ import docwriter
 import plotter
 
 import click
-
+import os
 
 @click.command()
 @click.option('--input', help='Path to .xls-file.')
@@ -23,7 +23,7 @@ def create_training_stats(input,  sheet, output):
     visualizer = plotter.Plotter(parser.data)
 
     if isSVGOnly:
-        visualizer.create_combined_plot().savefig('sample_fig.png')
+        visualizer.create_combined_plot().savefig('sample_fig.svg')
         return
 
     dw = docwriter.TrainingDocumentWriter(parser.read_cell_value(0,0,0))
@@ -31,8 +31,7 @@ def create_training_stats(input,  sheet, output):
     for f in visualizer.get_full_stat():
         dw.append_plot(f)
 
-    dw.generate_pdf()
-
+    dw.generate_pdf(output)
 
     return
 

@@ -160,11 +160,11 @@ class Plotter:
 
         # colors = ['b', 'g', 'r', 'c']
         #alternative style
-        #plt.pie(fracs, explode=explode, labels=labels, colors=colors,autopct='%1.1f%%', shadow=True, startangle=90)
         fig = plt.figure(figsize=(12, 3))
+        #plt.pie(fracs, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
         ax5 = plt.subplot2grid((1, 2), (0, 0), colspan=1)
-        #patches, texts = ax5.pie(fracs, explode=explode, startangle=90)
-        #ax5.legend(patches, labels, loc="best")
+        patches, texts = ax5.pie(fracs, explode=explode, startangle=90)
+        ax5.legend(patches, labels, loc="best")
         # Set aspect ratio to be equal so that pie is drawn as a circle.
         ax5.axis('equal')
         ax5.set_title('Training locations')

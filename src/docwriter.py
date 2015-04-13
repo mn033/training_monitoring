@@ -6,6 +6,7 @@ from pylatex import Document, Section, Subsection, Table, Math, TikZ, Axis, \
 from pylatex.utils import italic, escape_latex
 from pylatex.command import Command
 
+import os
 
 class TrainingDocumentWriter:
 
@@ -34,6 +35,19 @@ class TrainingDocumentWriter:
                 self.doc.append(content)
         return
 
-    def generate_pdf(self):
-        self.doc.generate_pdf()
+    def generate_pdf(self,filename=u'', clean=True, compiler='pdflatex'):
+
+        #This is a workaround to save the generated pdf in a different directory (not in working dir)
+        cur_path = os.getcwd()
+        dirlist = filename.split('/')
+        os.chdir(os.path.dirname(filename)) #cd to specified directory
+
+        #Remove possible existing file extension (.pdf)
+        if '.' in filename:
+            self.doc.generate_pdf(dirlist[len(dirlist)-1].split('.')[0])
+        else:
+            self.doc.generate_pdf(dirlist[len(dirlist)-1])
+
+        os.chdir(cur_path) #cd to original working directory
+
         return
