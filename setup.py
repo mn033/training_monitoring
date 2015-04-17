@@ -7,4 +7,4 @@ setup(name='training_monitoring',
       author='jgru',
       author_email='jang92@gmx.de',
       packages=['training_monitoring'],
-      zip_safe=False)
+      zip_safe=True)
