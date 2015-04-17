@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='trainingmonitoring',
+setup(name='training_monitoring',
       version='0.1',
       description='A tool to visualize training data',
       url='https://github.com/jgru/training_monitoring',
